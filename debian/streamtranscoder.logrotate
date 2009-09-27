@@ -1,0 +1,5 @@
+/var/log/streamtranscoder/*.log {
+  rotate 7
+  daily
+  compress
+}
