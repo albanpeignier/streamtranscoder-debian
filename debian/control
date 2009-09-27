@@ -1,0 +1,15 @@
+Source: streamtranscoder
+Section: sound
+Priority: optional
+Maintainer: Alban Peignier <alban.peignier@free.fr>
+Build-Depends: cdbs, debhelper, libogg-dev, libvorbis-dev, libmad0-dev, libmp3lame-dev
+Standards-Version: 3.7.2
+
+Package: streamtranscoder
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: can transcode a Shoutcast/Icecast stream (mp3/ogg vorbis) into any 
+ stream types that oddcast supports.
+ .
+ See <http://www.oddsock.org/tools/streamTranscoderV3/> for more info.
+
