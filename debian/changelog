@@ -1,3 +1,15 @@
+streamtranscoder (3.1.11-2) stable; urgency=low
+
+  * Fix init.d script (chuid at start and correct process name in stop)
+
+ -- Alban Peignier <alban.peignier@free.fr>  Tue, 01 Dec 2009 20:58:52 +0100
+
+streamtranscoder (3.1.11-1) stable; urgency=low
+
+  * Add logrotate file
+
+ -- Alban Peignier <alban.peignier@free.fr>  Sun, 27 Sep 2009 23:07:29 +0200
+
 streamtranscoder (3.1.11-0) stable; urgency=low
 
   * Initial release.

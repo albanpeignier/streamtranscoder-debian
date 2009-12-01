@@ -49,7 +49,7 @@ case "$1" in
 			fi
 		fi
 	  log_begin_msg "Starting streamtranscoder:" "streamtranscoder"
-		if start-stop-daemon -m -b -S -o -q -p $PIDFILE -x $DAEMON -u $USER --chdir $CONFIG_DIR; then
+		if start-stop-daemon -m -b -S -o -q -p $PIDFILE -x $DAEMON -u $USER --chuid $USER --chdir $CONFIG_DIR; then
 			log_end_msg 0
 		else
 			log_end_msg 1
@@ -62,9 +62,7 @@ case "$1" in
 			exit 0
 		fi
 	  log_begin_msg "Stopping streamtranscoder:" "streamtranscoder"
-		killall -9 /usr/bin/streamtranscoder > /dev/null 2>&1 || true
-		if start-stop-daemon -m -K -o -q -p $PIDFILE -x /bin/su -u $USER; then
-                        rm -f $PIDFILE
+    if start-stop-daemon --stop --quiet --pidfile $PIDFILE -x $DAEMON; then
 			log_end_msg 0
 		else
 			log_end_msg 1
